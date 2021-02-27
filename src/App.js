@@ -1,8 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then (res => res.json())
+    .then (data => console.log(data));
+    
+
+  },[])
   const productName = ["Apple Watch", "Ipad", "Cavit-C", "Computer Keyboard"]
   return (
     <div className="App">
